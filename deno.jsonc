@@ -1,0 +1,22 @@
+{
+  "imports": {
+    "@david/dax": "jsr:@david/dax@0.42.0",
+    "@std/cli": "jsr:@std/cli@1.0.8",
+    "@std/expect": "jsr:@std/expect@1.0.9",
+    "@std/fs": "jsr:@std/fs@^1.0.6",
+    "@std/path": "jsr:@std/path@^1.0.8",
+    "@std/testing": "jsr:@std/testing@1.0.6"
+  },
+  "tasks": {
+    "install": "deno install --allow-all --global --force --config ./deno.jsonc --name demo-cli  ./cli.ts",
+    "dev": "deno run --allow-all cli.ts"
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": false,
+    "proseWrap": "preserve"
+  }
+}
