@@ -16,7 +16,7 @@ deno task install
 ## Usage
 
 ```shell
-# 
+# コマンド名は指定しなくても、インタラクティブに選択できます
 demo-cli <command name>
 ```
 
