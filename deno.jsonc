@@ -1,7 +1,8 @@
 {
   "imports": {
-    "@david/dax": "jsr:@david/dax@0.42.0",
+    "@david/dax": "jsr:@david/dax@^0.42.0",
     "@std/cli": "jsr:@std/cli@1.0.8",
+    "@std/csv": "jsr:@std/csv@^1.0.4",
     "@std/expect": "jsr:@std/expect@1.0.9",
     "@std/fs": "jsr:@std/fs@^1.0.6",
     "@std/path": "jsr:@std/path@^1.0.8",

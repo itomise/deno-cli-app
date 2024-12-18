@@ -1,4 +1,4 @@
-import $ from "jsr:@david/dax@^0.41.0";
+import $ from "jsr:@david/dax@^0.42.0";
 import { parseArgs } from "jsr:@std/cli@1.0.8";
 import { parse } from "jsr:@std/csv@^1.0.4";
 
