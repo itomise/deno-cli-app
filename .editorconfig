@@ -1,4 +1,3 @@
-# deno.json fmt の設定だけで vscode がうまくいかないことがあるため
 [*]
 charset = utf-8
 insert_final_newline = true
