@@ -1,6 +1,7 @@
-import $ from "jsr:@david/dax@^0.42.0";
-import { parseArgs } from "jsr:@std/cli@1.0.8";
-import { parse } from "jsr:@std/csv@^1.0.4";
+import $ from "@david/dax";
+import { parseArgs } from "@std/cli";
+import { parse } from "@std/csv";
+import { logger } from "../common/logger.ts";
 
 const args = parseArgs(Deno.args);
 const inputPath = args._[0];
@@ -12,15 +13,16 @@ const data = parse(csvString, { columns: ["id", "value"], skipFirstRow: true });
 const accessToken = await $`gcloud auth print-identity-token`.text();
 
 for await (const { id, value } of data) {
-  const apiRes = await fetch(`https://api.example.com/v1/${id}`, {
+  const apiRes = await fetch(`https://httpbin.org/post`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${accessToken}`,
     },
-    body: JSON.stringify({ value }),
+    body: JSON.stringify({ id, value }),
   });
   if (!apiRes.ok) {
     console.error(`Failed to create request for id: ${id}`);
+    Deno.exit(1);
   }
+  logger.success(`Created request for id: ${id}`);
 }
