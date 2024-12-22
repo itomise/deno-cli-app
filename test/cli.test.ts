@@ -22,25 +22,6 @@ Deno.test(
   },
 );
 
-// FIXME: 同時に回すと落ちる
-// Deno.test("should execute the hello command: from selecting command", async () => {
-//   restore();
-//   const currentCommands: string[] = [];
-
-//   for await (
-//     const entry of Deno.readDir(new URL("../commands", import.meta.url))
-//   ) {
-//     currentCommands.push(entry.name);
-//   }
-//   const helloIndex = currentCommands.indexOf("hello.ts");
-
-//   stub($, "select", () => Promise.resolve(helloIndex));
-
-//   const fn = spy(logger, "info");
-//   await main();
-//   assertSpyCall(fn, 0, { args: ["Hello, World!"] });
-// });
-
 Deno.test("cli.ts: listOptions", async (t) => {
   const files = [
     "example/create.ts",
